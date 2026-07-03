@@ -10,13 +10,16 @@ PriceVecta is a custom price monitoring platform that automates price collection
 PriceVecta eliminates manual data collection by combining automated web scraping with an intuitive dashboard, historical analytics, CSV exports, and real-time alerts to provide businesses with actionable market insights, real-time competitive advantages, and data-driven pricing decisions.
 
 ## Key Features
-- **Custom Automated Extraction:** Continuous price and stock monitoring across client-specified e-commerce, retail, and distributor websites.
-- **Visual Intelligence Dashboard:** A clean, responsive interface viewing tracked products, current prices, and key monitoring metrics. 
-- **Historical Data Analytics:** Data persistence layer that logs pricing history over time, enabling long-term trend analysis.
-- **Data Export:** Built-in capability to export historical pricing records to CSV for external reporting and business intelligence.
-- **Instant Alerting Engine:** Real-time Telegram and Email notifications immediately price changes are detected, including the previous price, current price, and product link.
-- **Scalable Data Pipeline:** Built with Scrapy, Flask, SQLAlchemy, and Docker to support reliable, automated monitoring workflows.
-- **Cloud-Based Scheduling:** Automated scraping jobs deployed on Google Cloud Compute Engine using Linux cron jobs.
+| Feature | Description |
+| :--- | :--- |
+| **Custom Automated Extraction** | Continuous price and stock monitoring across client-specified e-commerce, retail, and distributor websites. |
+| **Visual Intelligence Dashboard** | A clean, responsive interface viewing tracked products, current prices, and key monitoring metrics. |
+| **Historical Data Analytics** | Data persistence layer that logs pricing history over time, enabling long-term trend analysis. |
+| **Data Export** | Built-in capability to export historical pricing records to CSV for external reporting and business intelligence. |
+| **Instant Alerting Engine** | Real-time Telegram and Email notifications immediately price changes are detected, including the previous price, current price, and product link. |
+| **Scalable Data Pipeline** | Built with Scrapy, Flask, SQLAlchemy, and Docker to support reliable, automated monitoring workflows. |
+| **Cloud-Based Scheduling** | Automated scraping jobs deployed on Google Cloud Compute Engine using Linux cron jobs. |
+
 
 ## Full Production Capabilities
 *The complete enterprise architecture of PriceVecta supports extended features not active in this standalone demo*
@@ -63,3 +66,22 @@ If a change is detected, PriceVecta automatically:
 | **Integrations** | Telegram API, SMTP (Email Notifications) |
 | **Infrastructure & Deployment** | Docker, Google Cloud Compute Engine, Linux Cron Jobs |
 
+### Technical Challenges & Engineering Resilience 
+- **Adaptive Target Structural Failovers:** E-commerce architectures frequently undergo layout updates that can disrupt brittle parsing logic. The extraction engine utilises a defensive multi-layered data extraction strategy, prioritising semantic metadata, ensuring the pipeline doesn't break when a target site updates its frontend.
+ 
+- **Pipeline Longevity & Network Optimisation:** Web data acquisition at production scale requires strict compliance with remote server stability. The pipeline enforces request throttling, organic delay distributions, and custom profiling to mimic standard user agents. This ensures the scraping engine remains low-impact, respects target bandwidth limits, and avoids triggering automated rate-limiting flags.
+
+### Highlights
+* Automated price monitoring
+* Historical pricing database
+* Real-time alerts
+* CSV exports
+* Dashboard reporting
+* Client-specific monitoring targets
+* Containerized deployment
+* Cloud-based scheduled execution
+
+### Production Roadmap
+- Migration from SQLite to a highly available PostgreSQL instance on GCP Cloud SQL.
+- Integration of advanced browser-automation fallback layers for heavy JavaScript-rendered single-page applications.
+- Implementation of a visual configuration wizard allowing users to add custom targets directly from the UI.
