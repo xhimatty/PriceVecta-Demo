@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: python run.py
+    ports:
+      - "5000:5000"
+    volumes:
+      - app_storage:/app/instance
+    env_file:
+      - .env
+    restart: always
+
+  scraper:
+    build: .
+    command: scrapy crawl oxy
+    volumes:
+      - app_storage:/app/instance
+    env_file:
+      - .env
+    restart: "no"
+
+volumes:
+  app_storage:
