@@ -22,7 +22,7 @@ PriceVecta eliminates manual data collection by combining automated web scraping
 
 
 ## Full Production Capabilities
-*The complete enterprise architecture of PriceVecta supports extended features not active in this standalone demo*
+*This repository demonstrates the core architecture  and functionality of PriceVecta. The production system contains additional proprietary features that are intentionally excluded.*
 
 ### Target Audience
 **PriceVecta is engineered to power data-driven decisions for:**
@@ -80,6 +80,4 @@ If a change is detected, PriceVecta automatically:
 * Cloud-based scheduled execution
 
 ### Production Roadmap
-- Migration from SQLite to a highly available PostgreSQL instance on GCP Cloud SQL.
-- Integration of advanced browser-automation fallback layers for heavy JavaScript-rendered single-page applications.
 - Implementation of a visual configuration wizard allowing users to add custom targets directly from the UI.
